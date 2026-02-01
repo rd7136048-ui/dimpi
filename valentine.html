@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Be My Valentine?</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffe6ed;
+      font-family: "Arial", sans-serif;
+      text-align: center;
+    }
+
+    .container {
+      padding-top: 120px;
+    }
+
+    h1 {
+      font-size: 48px;
+      color: #b3003b;
+      text-shadow: 1px 1px 2px #fff;
+    }
+
+    #question {
+      font-size: 28px;
+      margin-bottom: 40px;
+      color: #8a003f;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 22px;
+      margin: 15px;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+      transition: 0.3s ease;
+    }
+
+    #yesBtn {
+      background: #ff3366;
+      color: #fff;
+    }
+
+    #noBtn {
+      background: #ccc;
+      color: #333;
+    }
+
+    #noBtn:hover {
+      background: #bbb;
+    }
+
+    #noBtn.move {
+      position: relative;
+      left: 150px;
+      top: -10px;
+    }
+
+    #message {
+      margin-top: 50px;
+      font-size: 26px;
+      color: #b3003b;
+      display: none;
+    }
+  </style>
+
+</head>
+<body>
+
+  <div class="container">
+    <h1>💖 A Question for You 💖</h1>
+    <p id="question">Will you be my Valentine?</p>
+
+    <button id="yesBtn">Yes 💘</button>
+    <button id="noBtn">No 😢</button>
+
+    <p id="message">Yay! 💞 I’m so happy you said YES!</p>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+    const message = document.getElementById("message");
+
+    // move the "No" button when mouse gets near
+    noBtn.addEventListener("mouseover", function () {
+      noBtn.classList.toggle("move");
+    });
+
+    // Yes button click
+    yesBtn.addEventListener("click", function () {
+      message.style.display = "block";
+      yesBtn.style.display = "none";
+      noBtn.style.display = "none";
+      document.getElementById("question").textContent = "💖 Thank you! 💖";
+    });
+  </script>
+
+</body>
+</html>
